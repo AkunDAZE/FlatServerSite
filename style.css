@@ -154,160 +154,10 @@ header {
     margin: 5px 0;
 }
 
-/* スマホ用の全体調整 */
-@media (max-width: 768px) {
-    /* 全体のフォントサイズ調整 */
-    body {
-        font-size: 14px; /* デフォルトの文字サイズを縮小 */
-        line-height: 1.6; /* 行間を少し広げて読みやすく */
-    }
 
-    /* コンテンツ幅の調整 */
-    .content,
-    .info-box,
-    .description-box,
-    .feature-list {
-        width: 90%; /* 横幅を90%に縮小 */
-        margin: 0 auto 20px; /* 左右中央揃え */
-    }
 
-    /* セクションの余白調整 */
-    #sellable-items {
-        width: 95%; /* 横幅を調整 */
-        margin: 10% auto; /* 上下の余白を広げすぎない */
-    }
 
-    /* テキストサイズを小さく調整 */
-    h1, h2, h3 {
-        font-size: 18px; /* タイトルの文字サイズを調整 */
-    }
 
-    p {
-        font-size: 14px; /* 段落の文字サイズを小さく */
-    }
-
-    /* メニューの調整 */
-    .menu {
-        width: 100%; /* メニューを全幅に */
-        padding: 10px; /* 余白を小さく */
-        border-radius: 0; /* スマホでは角を丸くしない */
-    }
-
-    /* メニューアイテムのサイズ縮小 */
-    .menu a {
-        padding: 8px 15px; /* クリック範囲を小さく */
-        font-size: 14px; /* 文字サイズを調整 */
-    }
-
-    /* メニューアイテムのホバー効果 */
-    .menu a:hover {
-        background-color: #575757; /* 背景色を少し明るく */
-    }
-
-    /* フッターの調整 */
-    .footer {
-        font-size: 10px; /* フォントサイズを小さく */
-        padding: 10px; /* 余白を調整 */
-    }
-
-    /* 画像サイズの調整 */
-    .item img {
-        width: 80%; /* 画像を少し縮小 */
-        margin: 0 auto; /* センターに配置 */
-    }
-
-    /* セクションのタイトル */
-    .section-title {
-        font-size: 20px; /* タイトルを小さく */
-        margin-bottom: 15px; /* 下の余白を縮小 */
-    }
-}
-
-/* レスポンシブ対応：中間サイズ */
-@media (min-width: 769px) and (max-width: 1024px) {
-    /* コンテンツの幅調整 */
-    .content,
-    .info-box,
-    .description-box {
-        width: 80%; /* 横幅をやや広げる */
-    }
-
-    /* タイトルフォントの調整 */
-    h1, h2, h3 {
-        font-size: 20px; /* タイトルを少し大きく */
-    }
-
-    /* フッターの調整 */
-    .footer {
-        font-size: 12px; /* フォントサイズを調整 */
-        padding: 15px;
-    }
-}
-
-/* スマホ表示時に特定のセクションを非表示 */
-@media (max-width: 768px) {
-    .sp-hide {
-        display: none;
-    }
-}
-
-/* メディアクエリ（レスポンシブ対応） */
-@media (min-width: 768px) {
-    .menu {
-        display: flex;
-        position: static;
-        flex-direction: row;
-        background: none;
-        box-shadow: none;
-        width: auto;
-    }
-
-    .menu a {
-        color: white;
-    }
-
-    .hamburger {
-        display: none;
-    }
-}
-
-@media (max-width: 768px) {
-    /* ハンバーガーメニューを表示 */
-    .hamburger {
-        display: flex;
-    }
-
-    /* メニューはデフォルトでは非表示 */
-    .menu {
-        display: none;
-        flex-direction: column;
-        gap: 10px;
-        position: absolute;
-        top: 50px;
-        right: 20px;
-        background-color: #333;
-        border-radius: 10px;
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-        padding: 10px;
-        z-index: 1000; /* メニューを最前面に */
-    }
-
-    /* メニューが表示されたときにアクティブにする */
-    .menu.show {
-        display: flex;
-    }
-
-    .menu a {
-        color: white;
-        padding: 10px;
-        text-align: center;
-        border-radius: 5px;
-    }
-
-    .menu a:hover {
-        background-color: #575757;
-    }
-}
 
 /* フッターのスタイル */
 .footer {
@@ -431,12 +281,7 @@ header {
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* ホバー時に影を強調 */
 }
 
-/* レスポンシブ対応 */
-@media (max-width: 768px) {
-    .description-box {
-        width: 90%; /* スマートフォンなど小さい画面では、横幅を90%に */
-    }
-}
+
 
 /* 特徴リストのスタイル */
 .feature-list {
