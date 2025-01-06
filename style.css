@@ -919,3 +919,10 @@ header {
 #donateBtn:active {
     background-color: #388e3c; /* クリック時の色変更 */
 }
+
+/* スマホ表示時に特定のセクションを非表示 */
+@media (max-width: 768px) {
+    .sp-hide {
+        display: none;
+    }
+}
