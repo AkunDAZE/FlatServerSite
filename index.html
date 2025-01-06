@@ -710,6 +710,15 @@
 
 
     <script>
+        document.addEventListener("DOMContentLoaded", function () {
+    if (window.innerWidth <= 768) {
+        // スマホの場合に特定の要素を非表示
+        const elements = document.querySelectorAll(".sp-hide");
+        elements.forEach(el => el.style.display = "none");
+    }
+});
+
+        
         function showPage(pageId) {
     // すべてのページを非表示にする
     const pages = document.querySelectorAll('.page');
