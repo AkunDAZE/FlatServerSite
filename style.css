@@ -1,175 +1,927 @@
-/* ベースとなるCSS */
+/* 基本フォント設定 */
+@font-face {
+    font-family: 'GennoNijimiMincho';
+    src: url('fonts/幻ノにじみ明朝.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'GennoNijimiMincho', Arial, sans-serif;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-    background-color: #f5f5f5;
+    background-color: #f4f4f4;
+    background-image: url('https://msp.c.yimg.jp/images/v2/FUTi93tXq405grZVGgDqG67uDbHcX-Th48_rE-SPFlN122ucsGpRMMXHaqnPy2bQMD59I3kmibd16ommzwVfuOHul7QQqmALunw3abzteLOWTDhDb6xm2UugvQyjxIQMWIbEN8lQ-qgK99KEzeElA9HFumPDLaB5O5ZcwE4nDqZqCQWsykg3GWAmBfAafHAZhCMMART10XB2GlT736NDkA==/b.jpg?errorImage=false');
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    height: 100vh; /* ビューポートの高さを指定 */
 }
 
-.container {
-    width: 100%;
-    padding: 20px;
+/* 背景のぼかし効果 */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -2; /* 背景が最背面に */
+    background-image: url('https://msp.c.yimg.jp/images/v2/FUTi93tXq405grZVGgDqG67uDbHcX-Th48_rE-SPFlN122ucsGpRMMXHaqnPy2bQMD59I3kmibd16ommzwVfuOHul7QQqmALunw3abzteLOWTDhDb6xm2UugvQyjxIQMWIbEN8lQ-qgK99KEzeElA9HFumPDLaB5O5ZcwE4nDqZqCQWsykg3GWAmBfAafHAZhCMMART10XB2GlT736NDkA==/b.jpg?errorImage=false');
+    background-size: cover;
+    background-position: center center;
+    filter: blur(30px); /* ぼかしを強調：10pxから15pxに増加 */
+    opacity: 0.8; /* ぼかし効果を強調するために少し透明度を上げる */
 }
 
-.header, .footer {
-    text-align: center;
-    background-color: #333;
-    color: #fff;
-    padding: 15px;
-}
-
-.menu {
+/* ヘッダー */
+header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #333;
-    padding: 10px;
-    color: white;
-    position: sticky;
-    top: 0;
-    z-index: 100;
-}
-
-.menu a {
-    color: white;
-    text-decoration: none;
-    padding: 10px;
-}
-
-.menu a.active {
-    background-color: #555;
-}
-
-.menu .hamburger {
-    display: none;
-}
-
-.page-content {
-    display: none; /* 初期状態では非表示 */
-    padding: 20px;
-}
-
-.page-content.show {
-    display: block; /* showクラスがつくと表示 */
-}
-
-.donate-btn-container {
-    display: flex;
-    justify-content: center;
-    margin-top: 20px;
-}
-
-.donate-btn-container button {
+    padding: 10px 20px;
     background-color: #4CAF50;
     color: white;
-    border: none;
-    padding: 15px 32px;
-    font-size: 16px;
+    z-index: 2; /* ヘッダーを最前面に表示 */
+    position: relative;
+}
+
+/* ハンバーガーメニュー */
+.hamburger {
+    display: none; /* デフォルトでは非表示 */
     cursor: pointer;
+    flex-direction: column;
+    gap: 5px;
+    width: 30px;
+    height: 25px;
+    z-index: 999; /* ハンバーガーメニューアイコンが最前面に */
 }
 
-.donate-btn-container button:hover {
-    background-color: #45a049;
+.hamburger div {
+    width: 100%;
+    height: 5px;
+    background-color: white;
+    border-radius: 5px;
 }
 
-/* スマホ専用のCSS */
-@media screen and (max-width: 768px) {
-    /* メニューのデザイン変更 */
+/* メニュー */
+.menu {
+    display: none;
+    flex-direction: column;
+    background-color: #333;
+    position: absolute;
+    top: 50px;
+    right: 20px;
+    width: 200px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1000; /* メニューが最前面に来るように */
+}
+
+.menu.show {
+    display: flex; /* メニューが表示されたとき */
+}
+
+/* メニュー */
+.menu a {
+    padding: 10px 20px;
+    text-decoration: none;
+    color: white;
+    display: block;
+    background-color: #4CAF50; /* デフォルト背景色は緑 */
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+    border-radius: 5px;
+}
+
+/* メニューアイテムがホバーされているとき */
+.menu a:hover {
+    background-color: #444; /* ホバー時に背景色を淡い黒に変更 */
+    transform: translateY(-3px); /* 浮き出る効果 */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4); /* 強い影 */
+}
+
+/* メニューアイテムがアクティブになっているとき */
+.menu a.active {
+    background-color: #444; /* 背景色はホバー時と同じ淡い黒 */
+    color: red; /* アクティブな項目の文字色を赤に変更 */
+    font-weight: bold;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5); /* 強調する影 */
+    transform: translateY(-5px); /* より強調された浮き出る効果 */
+}
+
+/* メニューアイテムがアクティブかつホバー時 */
+.menu a.active:hover {
+    background-color: #444; /* アクティブなアイテムもホバー時の背景色と同じに */
+    transform: translateY(-6px); /* より強調された浮き出る効果 */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6); /* より強い影 */
+}
+
+/* コンテンツ */
+.content {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    position: relative;
+    z-index: 1; /* コンテンツがメニューより後ろに表示されないように */
+}
+
+/* 各枠のスタイル */
+.info-box {
+    background-color: #fff;
+    padding: 20px;
+    margin: 0 auto;
+    margin-bottom: 7%;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15), 0 0 20px rgba(0, 0, 0, 0.1); /* 既存の影 */
+    width: 100%;
+    max-width: 1200px;
+    transition: box-shadow 0.3s ease; /* 影の変化をスムーズに */
+}
+
+.info-box:hover {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25), 0 0 30px rgba(0, 0, 0, 0.15); /* ホバー時に浮き出る効果を追加 */
+}
+
+.info-box h2 {
+    color: #4CAF50;
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.info-box p {
+    font-size: 18px;
+    margin: 5px 0;
+}
+
+/* スマホ用の全体調整 */
+@media (max-width: 768px) {
+    /* 全体のフォントサイズ調整 */
+    body {
+        font-size: 14px; /* デフォルトの文字サイズを縮小 */
+        line-height: 1.6; /* 行間を少し広げて読みやすく */
+    }
+
+    /* コンテンツ幅の調整 */
+    .content,
+    .info-box,
+    .description-box,
+    .feature-list {
+        width: 90%; /* 横幅を90%に縮小 */
+        margin: 0 auto 20px; /* 左右中央揃え */
+    }
+
+    /* セクションの余白調整 */
+    #sellable-items {
+        width: 95%; /* 横幅を調整 */
+        margin: 10% auto; /* 上下の余白を広げすぎない */
+    }
+
+    /* テキストサイズを小さく調整 */
+    h1, h2, h3 {
+        font-size: 18px; /* タイトルの文字サイズを調整 */
+    }
+
+    p {
+        font-size: 14px; /* 段落の文字サイズを小さく */
+    }
+
+    /* メニューの調整 */
     .menu {
-        flex-direction: column;
-        align-items: flex-start;
+        width: 100%; /* メニューを全幅に */
+        padding: 10px; /* 余白を小さく */
+        border-radius: 0; /* スマホでは角を丸くしない */
     }
 
+    /* メニューアイテムのサイズ縮小 */
     .menu a {
-        padding: 10px 20px;
-        width: 100%;
-        text-align: left;
-        border-top: 1px solid #444;
+        padding: 8px 15px; /* クリック範囲を小さく */
+        font-size: 14px; /* 文字サイズを調整 */
     }
 
-    .menu .hamburger {
-        display: block;
-        cursor: pointer;
-        font-size: 30px;
-        color: white;
-        padding: 10px;
-    }
-
-    .page-content {
-        padding: 10px;
+    /* メニューアイテムのホバー効果 */
+    .menu a:hover {
+        background-color: #575757; /* 背景色を少し明るく */
     }
 
     /* フッターの調整 */
     .footer {
-        font-size: 14px;
+        font-size: 10px; /* フォントサイズを小さく */
+        padding: 10px; /* 余白を調整 */
     }
 
-    /* スクロールを意識したアニメーション */
-    .title-with-underline.active {
-        color: #f44336;
-        text-decoration: underline;
+    /* 画像サイズの調整 */
+    .item img {
+        width: 80%; /* 画像を少し縮小 */
+        margin: 0 auto; /* センターに配置 */
     }
 
-    .title-with-underline.active-out {
-        color: #333;
-    }
-
-    /* 募金ページに関する調整 */
-    .donation-info ul {
-        list-style-type: disc;
-        margin-left: 20px;
-    }
-
-    .donation-info li {
-        margin-bottom: 10px;
-    }
-
-    /* ページのフォーム調整 */
-    #donationForm {
-        display: block;
-        margin-top: 20px;
-    }
-
-    #paymentOptions {
-        display: block;
-        margin-top: 20px;
-    }
-
-    /* QRコード、リンク支払いの表示調整 */
-    #qrPage, #linkPage {
-        display: none;
-    }
-
-    /* スマホで進行度バーが見やすく */
-    #progressBar {
-        width: 100%;
-        height: 20px;
-        margin-top: 20px;
-    }
-
-    /* 募金フォームの入力項目調整 */
-    #donationFormContent input {
-        width: 100%;
-        padding: 10px;
-        margin: 10px 0;
-        font-size: 16px;
+    /* セクションのタイトル */
+    .section-title {
+        font-size: 20px; /* タイトルを小さく */
+        margin-bottom: 15px; /* 下の余白を縮小 */
     }
 }
 
-/* 横幅がさらに狭い端末への調整 */
-@media screen and (max-width: 480px) {
+/* レスポンシブ対応：中間サイズ */
+@media (min-width: 769px) and (max-width: 1024px) {
+    /* コンテンツの幅調整 */
+    .content,
+    .info-box,
+    .description-box {
+        width: 80%; /* 横幅をやや広げる */
+    }
+
+    /* タイトルフォントの調整 */
+    h1, h2, h3 {
+        font-size: 20px; /* タイトルを少し大きく */
+    }
+
+    /* フッターの調整 */
+    .footer {
+        font-size: 12px; /* フォントサイズを調整 */
+        padding: 15px;
+    }
+}
+
+/* スマホ表示時に特定のセクションを非表示 */
+@media (max-width: 768px) {
+    .sp-hide {
+        display: none;
+    }
+}
+
+/* メディアクエリ（レスポンシブ対応） */
+@media (min-width: 768px) {
+    .menu {
+        display: flex;
+        position: static;
+        flex-direction: row;
+        background: none;
+        box-shadow: none;
+        width: auto;
+    }
+
     .menu a {
-        font-size: 14px;
-        padding: 8px 16px;
+        color: white;
     }
 
-    .donate-btn-container button {
-        padding: 10px 20px;
-        font-size: 14px;
+    .hamburger {
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+    /* ハンバーガーメニューを表示 */
+    .hamburger {
+        display: flex;
     }
 
-    #progressBar {
-        height: 15px;
+    /* メニューはデフォルトでは非表示 */
+    .menu {
+        display: none;
+        flex-direction: column;
+        gap: 10px;
+        position: absolute;
+        top: 50px;
+        right: 20px;
+        background-color: #333;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        padding: 10px;
+        z-index: 1000; /* メニューを最前面に */
     }
+
+    /* メニューが表示されたときにアクティブにする */
+    .menu.show {
+        display: flex;
+    }
+
+    .menu a {
+        color: white;
+        padding: 10px;
+        text-align: center;
+        border-radius: 5px;
+    }
+
+    .menu a:hover {
+        background-color: #575757;
+    }
+}
+
+/* フッターのスタイル */
+.footer {
+    background-color: #808080; /* グレー背景 */
+    color: white; /* 文字色を白に */
+    text-align: center; /* テキストを中央に配置 */
+    padding: 15px 0; /* 上下に少し余白を追加 */
+    font-size: 12px; /* 少し小さめのフォント */
+    position: fixed; /* 固定表示 */
+    bottom: 0;
+    left: 0; /* 左端に合わせる */
+    right: 0; /* 右端に合わせる */
+    width: 100%; /* ページの幅全体を占める */
+}
+
+/* 整地鯖についてのタイトルスタイル */
+.section-title {
+    background-color: rgba(76, 175, 80, 0.7); /* 黄緑色で透明度を付けた背景色 */
+    color: #e6d227; /* 文字色を黄緑色に */
+    padding: 15px 30px; /* 内側の余白 */
+    text-align: center; /* 中央寄せ */
+    border-radius: 20px; /* 角を丸く */
+    margin: 20px auto; /* 上下の余白と中央寄せ */
+    width: 60%; /* 横幅を適度に設定 */
+    font-size: 24px; /* フォントサイズ */
+    font-weight: bold; /* 太字 */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* わずかな影をつけて浮き出る感じに */
+}
+
+
+.title-with-underline-how-play {
+    position: relative; /* 赤い線の位置を制御するため */
+    text-align: center; /* 中央寄せ */
+    font-size: 20px; /* タイトルのフォントサイズを小さく設定 */
+    font-weight: bold; /* 太字 */
+    padding: 8px 0; /* 内側の余白を少し小さく */
+    background-color: rgba(118, 125, 221, 0.3); /* 薄い黒の背景 */
+    color: white; /* 文字色 */
+    width: 50%; /* 横幅を80%に設定（端から少し内側に） */
+    margin: 1px auto; /* 横の余白を自動で調整して中央に配置 */
+    border-radius: 70px; /* 角を丸くする */
+    transition: background-color 0.3s ease; /* 背景色の変化 */
+}
+
+.title-with-underline-how-play .underline {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px; /* 赤い線の高さを少し小さく */
+    background-color: red;
+    transition: width 3.0s ease; /* 赤い線のアニメーション */
+}
+
+/* 照準が合ったときのクラス */
+.title-with-underline-how-play.active .underline {
+    width: 100%; /* 照準が合ったとき、赤い線が引かれる */
+}
+
+/* 照準が外れたときの動き */
+.title-with-underline-how-play.active-out .underline {
+    width: 0; /* 照準が外れたとき、赤い線が戻る */
+    transition: width 2.5s ease; /* 戻るアニメーション */
+}
+
+
+/* 新しいタイトルスタイル */
+.title-with-underline {
+    position: relative; /* 赤い線の位置を制御するため */
+    text-align: center; /* 中央寄せ */
+    font-size: 22px; /* タイトルのフォントサイズを小さく設定 */
+    font-weight: bold; /* 太字 */
+    padding: 8px 0; /* 内側の余白を少し小さく */
+    background-color: rgba(0, 0, 0, 0.3); /* 薄い黒の背景 */
+    color: white; /* 文字色 */
+    width: 80%; /* 横幅を80%に設定（端から少し内側に） */
+    margin: 0 auto; /* 横の余白を自動で調整して中央に配置 */
+    border-radius: 15px; /* 角を丸くする */
+    transition: background-color 0.3s ease; /* 背景色の変化 */
+}
+
+.title-with-underline .underline {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px; /* 赤い線の高さを少し小さく */
+    background-color: red;
+    transition: width 3.0s ease; /* 赤い線のアニメーション */
+}
+
+/* 照準が合ったときのクラス */
+.title-with-underline.active .underline {
+    width: 100%; /* 照準が合ったとき、赤い線が引かれる */
+}
+
+/* 照準が外れたときの動き */
+.title-with-underline.active-out .underline {
+    width: 0; /* 照準が外れたとき、赤い線が戻る */
+    transition: width 2.5s ease; /* 戻るアニメーション */
+}
+
+/* 説明文のスタイル */
+.description-box {
+    background-color: rgba(255, 255, 255, 0.8); /* 白い背景に透明度を追加 */
+    padding: 20px; /* 内側の余白 */
+    margin: 15px auto 250px; /* 上は21px、下は40pxの余白を追加し、中央寄せ */
+    border-radius: 15px; /* 角を丸くする */
+    width: 80%; /* 横幅を80%に設定（端から少し内側に） */
+    text-align: center; /* 中央寄せ */
+    font-size: 20px; /* フォントサイズを少し大きく */
+    color: #333; /* 文字色を濃いグレーに設定 */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* 影を追加 */
+    transition: background-color 0.3s ease; /* 背景色の変化をスムーズに */
+}
+
+/* ホバー時の影の強調 */
+.description-box:hover {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* ホバー時に影を強調 */
+}
+
+/* レスポンシブ対応 */
+@media (max-width: 768px) {
+    .description-box {
+        width: 90%; /* スマートフォンなど小さい画面では、横幅を90%に */
+    }
+}
+
+/* 特徴リストのスタイル */
+.feature-list {
+    background-color: rgba(255, 255, 255, 0.8); /* 白い背景に透明度を追加 */
+    padding: 20px; /* 内側の余白 */
+    margin: 21px auto 90px; /* 上下の余白と中央寄せ、下に余白追加 */
+    border-radius: 15px; /* 角を丸くする */
+    width: 40%; /* 横幅を70%に設定（端から少し内側に） */
+    text-align: center; /* 左寄せ */
+    font-size: 18px; /* フォントサイズを少し大きく */
+    color: #333; /* 文字色を濃いグレーに設定 */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* 影を追加 */
+    transition: background-color 0.3s ease; /* 背景色の変化をスムーズに */
+}
+
+.feature-list ul {
+    padding-left: 20px; /* リストの左側に余白を追加 */
+}
+
+.feature-list li {
+    margin: 10px 0; /* 各リストアイテムの上下の余白 */
+}
+
+/* セクションのスタイル */
+#sellable-items {
+    margin: 20px auto;
+    width: 80%;
+    background-color: rgba(255, 255, 255, 0.8); /* 白背景に透明度 */
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* セクションタイトル */
+#sellable-items .section-title {
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* カテゴリーのスタイル */
+.block-category {
+    margin-bottom: 20px;
+}
+
+.block-category h3 {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #444;
+    border-bottom: 2px solid #ddd; /* カテゴリーごとに下線 */
+    padding-bottom: 5px;
+}
+
+.block-category ul {
+    list-style-type: disc; /* リストにドットを使用 */
+    margin-left: 20px; /* インデント */
+    padding-left: 10px;
+}
+
+.block-category li {
+    margin: 5px 0; /* リストアイテムの間隔を調整 */
+    line-height: 1.6;
+    color: #333;
+    font-size: 16px;
+}
+
+/* セクション全体のスタイル */
+#sellable-items {
+    margin: 5% auto;
+    width: 80%;
+    text-align: center;
+}
+
+/* セクションタイトル */
+#sellable-items .section-title {
+    font-size: 30px;
+    font-weight: bold;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+/* カテゴリタイトル */
+.item-category {
+    margin-top: 80px; /* 上部にスペースを追加 */
+}
+
+.item-category h3 {
+    font-size: 30px;
+    font-weight: bold;
+    margin: 20px 0;
+    color: #313131;
+    border-bottom: 2px solid #ddd;
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+/* 各アイテムリスト */
+.item-list {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px; /* 各アイテム間のスペース */
+}
+
+/* 各アイテム */
+.item {
+    width: 120px;
+    text-align: center;
+}
+
+.item img {
+    width: 100%; /* 画像を枠内に収める */
+    border-radius: 10px; /* 角を丸くする */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* 影を追加 */
+    transition: transform 0.3s ease;
+}
+
+.item img:hover {
+    transform: scale(1.1); /* ホバー時に拡大 */
+}
+
+.item p {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #333;
+    font-weight: bold;
+}
+
+
+/* セクション全体 */
+#rank {
+    margin: 20px auto;
+    width: 80%;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* セクションタイトル */
+#rank .section-title {
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* 説明部分を囲むスタイル */
+#rank .description {
+    font-size: 16px;
+    line-height: 1.8;
+    color: #555;
+    text-align: center;
+    background-color: #fff; /* 背景色を白に設定 */
+    padding: 15px; /* 周囲の余白 */
+    border-radius: 10px; /* 角を丸く */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* 影を追加 */
+    margin-bottom: 20px;
+}
+
+/* ランク一覧のスタイル */
+.rank-list table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.rank-list th,
+.rank-list td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+}
+
+.rank-list th {
+    background-color: #f4f4f4;
+    font-weight: bold;
+    color: #333;
+}
+
+.rank-list tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.rank-list tr:hover {
+    background-color: #f1f1f1;
+}
+
+.rank-list td {
+    font-size: 14px;
+    color: #555;
+}
+
+/* セクション全体 */
+#faq {
+    margin: 10px auto;
+    width: 80%;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 17px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* セクションタイトル */
+#faq .section-title {
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+/* 質問と答えのスタイル */
+.faq-item {
+    margin-bottom: 10px;
+}
+
+/* 質問部分 */
+.faq-question p {
+    font-size: 23px;
+    font-weight: bold;
+    color: #444;
+    border-bottom: 2.4px solid #ddd; /* 質問部分に下線 */
+    background-color: rgba(121, 236, 136, 0.3); /* 空色の背景 */
+    border-radius: px;
+    padding-bottom: 8px;
+}
+
+/* 答え部分 */
+.faq-answer p {
+    font-size: 18px;
+    color: #313131;
+    line-height: 1.8;
+    margin-top: 10px;
+    margin-bottom: 90px;
+    padding: 10px;
+    background-color: rgba(173, 216, 230, 0.7); /* 空色の背景 */
+    border-radius: 20px;
+}
+
+/* アイテムを区切る線を引く */
+.faq-item + .faq-item {
+    border-top: 1px solid #ddd;
+    padding-top: 20px;
+}
+
+
+
+
+
+#terms {
+    padding: 20px;
+    background-color: #f9f9f9;
+    color: #333;
+    font-family: Arial, sans-serif;
+}
+
+#terms h2 {
+    font-size: 24px;
+    margin-top: 60px;
+    color: #4CAF50;
+}
+
+.terms-content h3 {
+    font-size: 24px;
+    color: #4CAF50;
+    margin-top: 100px; /* 条タイトルの上部の間隔を広く */
+    margin-bottom: 20px; /* 条タイトルの下部の間隔 */
+    text-align: center; /* 中央揃え */
+}
+
+.terms-content p {
+    font-size: 16px;
+    line-height: 1.6;
+    margin: 10px 0; /* 段落間の間隔 */
+}
+
+.terms-content ul {
+    margin-left: 20px;
+}
+
+.terms-content ul li {
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.terms-content ul li::before {
+    content: "• ";
+    color: #4CAF50;
+}
+
+.terms-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.terms-table th, .terms-table td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+.terms-table th {
+    background-color: #f4f4f4;
+    font-weight: bold;
+}
+
+.terms-table td {
+    background-color: #fff;
+}
+
+.terms-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.terms-list-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.terms-list-table th, .terms-list-table td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+.terms-list-table th {
+    background-color: #f4f4f4;
+    font-weight: bold;
+}
+
+.terms-list-table td {
+    background-color: #fff;
+}
+
+.terms-list-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+
+
+
+
+
+
+#donation {
+    padding: 20px;
+    background-color: #f9f9f9;
+    color: #333;
+    font-family: Arial, sans-serif;
+}
+
+#donation .section-title {
+    font-size: 28px;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #3a3a3a;
+}
+
+#donation .terms-content {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#donation .donation-info {
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.8); /* 淡い白色 */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+}
+
+#donation .donation-info p {
+    font-size: 18px;
+    margin: 10px 0;
+}
+
+#donation .donation-info ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+#donation .donation-info ul li {
+    font-size: 18px;
+    line-height: 1.6;
+    margin: 5px 0;
+}
+
+#donation .donation-info ul li::before {
+    content: "• ";
+    color: #4CAF50;
+}
+
+/* 募金するボタンのスタイル */
+.donate-btn-container {
+    text-align: center;
+    margin-top: 50px; /* 上部に隙間 */
+}
+
+#donateBtn {
+    font-size: 24px;
+    padding: 15px 30px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#donateBtn:hover {
+    background-color: #45a049; /* ホバー時の色変更 */
+}
+
+#donateBtn:active {
+    background-color: #388e3c; /* クリック時の色変更 */
+}
+
+#donation .terms-content h3 {
+    font-size: 24px;
+    color: #4CAF50;
+    margin-top: 20px;
+    text-align: left;
+}
+
+#donation .terms-content p {
+    font-size: 16px;
+    line-height: 1.6;
+    margin: 10px 0;
+    text-align: left;
+}
+
+#donation .terms-content ul {
+    margin-left: 20px;
+}
+
+#donation .terms-content ul li {
+    font-size: 16px;
+    line-height: 1.6;
+    list-style-type: disc;
+}
+
+#donation .terms-content ul li::before {
+    content: "• ";
+    color: #4CAF50;
+}
+
+#donation .terms-content h3:first-of-type {
+    margin-top: 0;
+}
+
+#donation .terms-content p:first-of-type {
+    margin-top: 10px;
+}
+
+/* 「募金する！」ボタンのスタイル */
+.donate-btn-container {
+    text-align: center;
+    margin-top: 50px; /* 上部に隙間 */
+}
+
+#donateBtn {
+    font-size: 24px;
+    padding: 15px 30px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#donateBtn:hover {
+    background-color: #45a049; /* ホバー時の色変更 */
+}
+
+#donateBtn:active {
+    background-color: #388e3c; /* クリック時の色変更 */
 }
