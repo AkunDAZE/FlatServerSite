@@ -1,0 +1,115 @@
+/* 全体の背景設定 */
+body {
+    font-family: 'GennoNijimiMincho', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    background-image: url('https://msp.c.yimg.jp/images/v2/FUTi93tXq405grZVGgDqG67uDbHcX-Th48_rE-SPFlN122ucsGpRMMXHaqnPy2bQMD59I3kmibd16ommzwVfuOHul7QQqmALunw3abzteLOWTDhDb6xm2UugvQyjxIQMWIbEN8lQ-qgK99KEzeElA9HFumPDLaB5O5ZcwE4nDqZqCQWsykg3GWAmBfAafHAZhCMMART10XB2GlT736NDkA==/b.jpg?errorImage=false');
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    height: 100vh; /* ビューポートの高さを指定 */
+}
+
+/* 背景のぼかし効果 */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -2; /* 背景が最背面に */
+    background-image: url('https://msp.c.yimg.jp/images/v2/FUTi93tXq405grZVGgDqG67uDbHcX-Th48_rE-SPFlN122ucsGpRMMXHaqnPy2bQMD59I3kmibd16ommzwVfuOHul7QQqmALunw3abzteLOWTDhDb6xm2UugvQyjxIQMWIbEN8lQ-qgK99KEzeElA9HFumPDLaB5O5ZcwE4nDqZqCQWsykg3GWAmBfAafHAZhCMMART10XB2GlT736NDkA==/b.jpg?errorImage=false');
+    background-size: cover;
+    background-position: center center;
+    filter: blur(30px); /* ぼかしを強調：10pxから15pxに増加 */
+    opacity: 0.8; /* ぼかし効果を強調するために少し透明度を上げる */
+}
+
+/* ページ全体のスタイル */
+#donation {
+    padding: 20px;
+    color: #333;
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+
+/* セクションタイトル */
+#donation .section-title h2 {
+    font-size: 32px;
+    color: #4CAF50;
+    margin-bottom: 20px;
+}
+
+/* 募金情報 */
+#donation .donation-info {
+    font-size: 18px;
+    margin: 20px auto;
+    max-width: 600px;
+    background-color: rgba(255, 255, 255, 0.8); /* 淡い白色 */
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+}
+
+/* フォームスタイル */
+#donationForm {
+    margin-top: 40px;
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+    display: inline-block;
+    text-align: left;
+}
+
+#donationForm h3 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+#donationForm input {
+    padding: 10px;
+    font-size: 16px;
+    width: 80%;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+#donationForm button {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#donationForm button:hover {
+    background-color: #45a049; /* ホバー時の色変更 */
+}
+
+/* 送金方法選択肢 */
+.payment-options {
+    margin-top: 40px;
+    display: none; /* 初めは非表示 */
+}
+
+.payment-options button {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin: 10px;
+}
+
+.payment-options button:hover {
+    background-color: #45a049; /* ホバー時の色変更 */
+}

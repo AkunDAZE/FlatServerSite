@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>募金ページ</title>
+    <link rel="stylesheet" href="donation_style.css">
+</head>
+<body>
+
+<!-- 背景とページの内容 -->
+<div id="donation">
+
+    <!-- 募金をするボタン -->
+    <div class="section-title">
+        <h2>募金をする</h2>
+    </div>
+    
+    <!-- 説明文 -->
+    <div class="donation-info">
+        <p>募金してくださる方は<br>以下の情報をご入力ください。</p>
+        <p>募金はPayPayを利用して行います。<br>送金方法はQRコードまたはリンクから選べます。</p>
+    </div>
+
+    <!-- 募金フォーム -->
+    <div id="donationForm" class="donation-form">
+        <h3>募金フォーム</h3>
+        <form id="donationFormContent" action="https://formspree.io/f/mbllpzvw" method="POST">
+            <label for="nickname">あなたのニックネーム</label><br>
+            <input type="text" id="nickname" name="nickname" required><br><br>
+
+            <label for="amount">募金金額</label><br>
+            <input type="number" id="amount" name="amount" required><br><br>
+
+            <button type="submit">送信</button>
+        </form>
+    </div>
+
+    <!-- 送金方法選択 -->
+    <div id="paymentOptions" class="payment-options" style="display: none;">
+        <h3>送金方法を選んでください</h3>
+        <!-- QRコード表示 -->
+        <div class="donation-info">
+            <p>QRコードで送金する場合はaこちらをご利用ください：</p>
+            <img src="sendQR.png" alt="PayPay送金QRコード" style="width: 200px; height: auto; margin: 20px 0;">
+        </div>
+        <!-- リンク送金ボタン -->
+        <div class="donation-info">
+            <p>リンクから送金する場合はこちらをクリック：</p>
+            <a href="https://qr.paypay.ne.jp/p2p01_4yWGvZ67B57E0UZQ" target="_blank">
+                <button type="button" id="linkButton">リンクから送金</button>
+            </a>
+        </div>
+    </div>
+
+</div>
+
+<script>
+    // フォーム送信時の処理
+    document.getElementById("donationFormContent").addEventListener("submit", function(event) {
+        event.preventDefault(); // フォームのデフォルトの送信を無効にする
+
+        // 送金方法の選択肢を表示
+        document.getElementById("paymentOptions").style.display = "block";
+        document.getElementById("donationForm").style.display = "none"; // フォームを非表示
+    });
+</script>
+
+</body>
+</html>
