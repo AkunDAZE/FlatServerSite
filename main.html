@@ -1,0 +1,852 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>整地鯖</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div style="display: flex; align-items: center; gap: 10px;">
+            <img src="https://msp.c.yimg.jp/images/v2/FUTi93tXq405grZVGgDqG2dwM1M04EuxuRUHp89E-TdH4xORCnWUX_pmSKOVQ2WDr-PdFWDKd-8f4bg2so080RtIdbNIQxXWIdmIG4mfxv-GuzRh6i4HbHDI9mVv807c0Jn3Na5NL-TX_icw4dpXPxw11An58czUXkC52MjZsuGo14xNNzlcxUz05XfpPGtdtNSVPohjr2REteUeTRssnw==/Grass_Block_JE7_BE6.png?errorImage=false" alt="草ブロック" style="width: 40px; height: 40px;">
+            <h1>整地鯖</h1>
+        </div>
+        <div class="hamburger" onclick="toggleMenu()">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <nav class="menu" id="menu">
+            <a href="#home" class="active" onclick="showPage('home')">ホーム</a>
+            <a href="#about" onclick="showPage('about')">整地鯖について</a>
+            <a href="#how-to-play" onclick="showPage('how-to-play')">参加方法</a>
+            <a href="#sellable-items" onclick="showPage('sellable-items')">売れるものについて</a>
+            <a href="#rank" onclick="showPage('rank')">ランクについて</a>
+            <a href="#qa" onclick="showPage('qa')">Q and A</a>
+            <a href="#terms" onclick="showPage('terms')">利用規約</a>
+            <a href="#donation" onclick="showPage('donation')">募金</a>
+        </nav>
+    </header>
+
+    <div class="content">
+        <!-- 鯖主の枠 -->
+        <section id="home" class="page-content">
+            <div class="info-box">
+                <h2>制作者 / 鯖主</h2>
+                <p>名前：あーくん</p>
+                <p>MCID：HikinikuDESU103</p>
+                <p>Discord：akun_zzzzz__</p>
+            </div>
+
+            <!-- 協力者の枠 -->
+            <div class="info-box">
+                <h2>実行テスト / 協力者</h2>
+                <p>名前：つえたろ</p>
+                <p>MCID：tsuetaro 410</p>
+                <p>Discord：tsuetaro</p>
+            </div>
+
+            <!-- スペシャルサンクスの枠 -->
+            <div class="info-box">
+                <h2>スペシャルサンクス</h2>
+                <p>Minecraft Bedrock</p>
+                <p>VScode</p>
+                <p>Html, Css, Java</p>
+                <p>Behavior, Resource</p>
+                <p>Minecraft Wiki</p>
+            </div>
+        </section>
+
+        
+        <section id="about" class="page-content" style="display: none;">
+            <div class="section-title">
+                整地鯖について
+            </div>
+            <!-- 内容 -->
+            <div class="title-with-underline">
+                <h2>そもそも整地とは？</h2>
+                <div class="underline"></div>
+            </div>
+            <p class="description-box">整地とは<br>自分で決めた高さまでブロックを掘り<br>たいらな状態にすることです！</p>
+            
+            <div class="title-with-underline">
+                <h2>じゃあ整地鯖って？</h2>
+                <div class="underline"></div>
+            </div>
+            <p class="description-box">名前の通り整地を行う 鯖 = サーバー　です！<br>「サーバーってなに？」って思うと思うんですが<br>サーバーとか簡単に言ってしまえば<br>ワールドとなっています！<br><br>イメージ的にはクリエイティブなどで作った<br>ワールドをかっこよく言った感じです！</p>
+            
+            <div class="title-with-underline">
+                <h2>整地するだけ？</h2>
+                <div class="underline"></div>
+            </div>
+            <p class="description-box">もちろん鯖の名前の通り<br>整地をするだけの鯖なのですが、<br>この鯖にはサバイバルでするような整地とは<br>"一味違った"<br>整地を楽しむことができます！</p>
+            
+            <div class="title-with-underline">
+                <h2>この鯖の特徴はこれ！↓</h2>
+                <div class="underline"></div>
+            </div>
+            <div class="feature-list">
+                <ul>
+                    <li>ランキング機能がある</li>
+                    <li>金銭システムがある</li>
+                    <li>ブロック数が換算される</li>
+                    <li>ランク制度がある</li>
+                    <li>鯖特有のアイテムがある</li>
+                    <li>他の特殊な施設がある</li>
+                    <li>---※カジノも制作中！---</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="how-to-play" class="page-content" style="display: none;"> 
+            <div class="section-title">
+                参加方法
+            </div>
+            <!-- 内容 -->
+            <div class="title-with-underline">
+                <h2>どうやって遊ぶの？</h2>
+                <div class="underline"></div>
+            </div>
+            <p class="description-box">現在2つの遊び方があります。<br><br>その時の環境によって<br>遊び方が違います。</p>
+        
+            <div class="title-with-underline-how-play">
+                <h2>フレンドになる</h2>
+                <div class="underline"></div>
+            </div>
+            <div class="feature-list">
+                <ol>
+                    <li>鯖に入りたい事を伝える</li>
+                    <li>自分のIDを送信する</li>
+                    <li>主へフレンド申請する</li>
+                    <li>入っていいことの許可を貰う</li>
+                    <li>フレンド欄から参加する</li>
+                </ol>
+            </div>
+            <div class="title-with-underline-how-play">
+                <h2>Realmsから参加する</h2>
+                <div class="underline"></div>
+            </div>
+            <div class="feature-list">
+                <ol>
+                    <li>鯖に入りたい事を伝える</li>
+                    <li>主へフレンド申請する</li>
+                    <li>Realms招待コードを入力する</li>
+                    <li>参加する</li>
+                </ol>
+                <li>招待コード：[現在ありません]</li>
+            </div>
+        </section>
+
+        <section id="sellable-items" class="page-content">
+            <div class="section-title">売れるものについて</div>
+        
+            <!-- 草系ブロック -->
+            <div class="item-category">
+                <h3>草系ブロック</h3>
+                <div class="item-list">
+                    <div class="item">
+                        <img src="https://msp.c.yimg.jp/images/v2/FUTi93tXq405grZVGgDqG2dwM1M04EuxuRUHp89E-TdH4xORCnWUX_pmSKOVQ2WDr-PdFWDKd-8f4bg2so080RtIdbNIQxXWIdmIG4mfxv-GuzRh6i4HbHDI9mVv807c0Jn3Na5NL-TX_icw4dpXPxw11An58czUXkC52MjZsuGo14xNNzlcxUz05XfpPGtdtNSVPohjr2REteUeTRssnw==/Grass_Block_JE7_BE6.png?errorImage=false" alt="草ブロック">
+                        <p>草ブロック</p>
+                    </div>
+                    <div class="item">
+                        <img src="https://msp.c.yimg.jp/images/v2/FUTi93tXq405grZVGgDqGz5pkwNEhTPC-_QtQ8JlESAX85JzjL2RGX_HBqzR0WRm8Hdj74Ax1ms0vj9-GnpEyfZqvZSi-5-yrWn8hypEa8CObrZGH7VQM09PzK7qjEWwLyZq-4HNOGgzu7oHZpButd2m7BLX5NXAspdRCLxoXuOvDnvRBBV-iUzdyXOvCChhaJqDe42hcqAmZt90zCxUwWvgejC0Czt7dY7gL8cl27zXQjo78F5MXGlJmsiJHVCOP4VEHjlA__kb5o_DEUp6v1NkKMKa8LxZmRFTNaq8N-saRK1Aj9WKq7dd3VQ2vGVSo1w6nrsogVWmILSph_AQJFBX8AnfQNm1CAIJ2vREjIUsWBYaq1FMRgn8x9ZZyma2WMjnLPJ6o_fuPld_5hvaSA==/latest?errorImage=false" alt="土">
+                        <p>土</p>
+                    </div>
+                    <div class="item">
+                        <img src="https://msp.c.yimg.jp/images/v2/FUTi93tXq405grZVGgDqGz5pkwNEhTPC-_QtQ8JlESAX85JzjL2RGX_HBqzR0WRm8Hdj74Ax1ms0vj9-GnpEyfZqvZSi-5-yrWn8hypEa8DxfsIoetZ3wECv19lrBOLBBi_gKoqtimVYIHFNU3zg-aLzxOSFze-m5Ytbw5CRaFf2oGiQXSLNmg31pomgThmgbuiUXyefYUhYKghvPgzOgwo0wDdxsU1v7XFdDA3-h7ESpTJXeGgjH1pYS_NkT8ZrrBreLrILy8BVFVwXQr7uf4NY_RJeyAPpRKf5KY2jpLF5Ve3xPrd3uGi8nej1DXax781tdf8o6v8eBvsTTFGTDLjeLgNAFSANpqQwyNXBwiaO9ja5IZrAoPp80Rf6aJbPZ49RSrUBzuuNVRsx7trFshCkEXxRtcoswJP-O2NH3IE=/latest?errorImage=false" alt="荒れた土">
+                        <p>粗い土</p>
+                    </div>
+                    <div class="item">
+                        <img src="https://msp.c.yimg.jp/images/v2/FUTi93tXq405grZVGgDqGz5pkwNEhTPC-_QtQ8JlESAX85JzjL2RGX_HBqzR0WRm8Hdj74Ax1ms0vj9-GnpEyfZqvZSi-5-yrWn8hypEa8AscqdftA093SM-cG8IIwFidx3kz4PXYdtQQSdEBfcH2o72NrkhmsCg-nzRF_pols9UY2JapcYxCk82hLGaenobmlUyZ8e6D8h_KFGWOf5ESQJW7P2pl1GPPfX14Y22bC809_laRG99nj_GW8k9YA6KgIkb91UTII0gW8zEWFxbBMLXvu63gGlUm7C6_3q_UbKauu3rUFHVWwFRPzFi6CbCCtDdCRS8Syk-xQZeGuLB2AHN0f9SbG8Sh9qX2z254tf3R5xda6MVwV_G7haxkyv3ykgVFycdwmN2QaZfqm7c6g==/latest?errorImage=false" alt="砂利">
+                        <p>砂利</p>
+                    </div>
+                    <div class="item">
+                        <img src="https://msp.c.yimg.jp/images/v2/FUTi93tXq405grZVGgDqGz5pkwNEhTPC-_QtQ8JlESAX85JzjL2RGX_HBqzR0WRm8Hdj74Ax1ms0vj9-GnpEyfZqvZSi-5-yrWn8hypEa8Cx2f5n70Iat8z_1vu3jM2swCKS3a9yGM4_1AtJ9HSoJ472NrkhmsCg-nzRF_pols_4DevXFZbgRCWKvC94zmCmN-V_RpxHbZMPp_g7UDWcDgJW7P2pl1GPPfX14Y22bC809_laRG99nj_GW8k9YA6KgIkb91UTII0gW8zEWFxbBMLXvu63gGlUm7C6_3q_UbLZ_GylkJ9dPGSzBX0XDmGILgdxxmHe871q9MUssuHP6QHN0f9SbG8Sh9qX2z254tf3R5xda6MVwV_G7haxkyv3ebyVVPMLjXW7KLDvbRANzQ==/latest?errorImage=false" alt="ポドゾル">
+                        <p>ポドゾル</p>
+                    </div>
+                    <div class="item">
+                        <img src="https://msp.c.yimg.jp/images/v2/FUTi93tXq405grZVGgDqG2dwM1M04EuxuRUHp89E-Tc5pGcYTnImn73dHbj-UFxFo6a-UOs9Xw619Vp0JZTmh3vtrz4F7xrJavtmJDKiWiGWTDhDb6xm2UugvQyjxIQMuOZBZ5FsvvlvQ6aMwneHscVg8L914tx3clIKoP180hrQM4HZJ_fpusJV-MPkM9ZsNLb31dC88XbsPg_iGog7IQ==/Mycelium_JE5_BE3.png?errorImage=false" alt="菌糸">
+                        <p>菌糸</p>
+                    </div>
+                    <div class="item">
+                        <img src="https://msp.c.yimg.jp/images/v2/FUTi93tXq405grZVGgDqG2dwM1M04EuxuRUHp89E-TfobJI9P4aTwXxcrX-MTkIXVvZxubpu2X5ZilZqTeLlLXiIBgx1aL7tGFEJpwjWLsi7uOt3elhXol1j7IMCQm1B-KBZZVfJ64fQcEKtgxPefNK6O2jE0X7ioR_fMlFPt9K_vSTa1knVLpCPCBoh5vDZXCbWCINJm5Fl_rmBa8okhL19aw9K1EDwjLhw8cNCm26VRbqHFOMVRDJd2EG9VKalDlnZsbAWwftyXyjlpUMZrRfNCoM8070EuyTiysaJv_uog9NWSbPi-KrzLCyxAnn5/150px-Netherrack_JE4_BE2.png?errorImage=false" alt="ネザーラック">
+                        <p>ネザーラック x8</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 草系ブロック -->
+            <div class="item-category">
+                <h3>石系ブロック</h3>
+                <div class="item-list">
+                    <div class="item">
+                        <img src="https://msp.c.yimg.jp/images/v2/FUTi93tXq405grZVGgDqGz5pkwNEhTPC-_QtQ8JlESAX85JzjL2RGX_HBqzR0WRm8Hdj74Ax1ms0vj9-GnpEyfZqvZSi-5-yrWn8hypEa8AowpyOgAlWh8VHZSsia7wyn4TBW6vGQUBccz8PdZbgE7jqWogVft4CjhkksMyf_lvcHVGhDWDz1O1nVr6zRpoyzy9WwnHNoxSYRPI6x5w6c0zZjFJ27j4CJN3GZUimY5R7R2HOJPARj8GwsFrzay0rLsSw5OWD8oW1w-GgyrlnqHoqPkPoo35lyikkBt1hv7YIV5aePiBZ0hJGMWrPoQZpVR-FpfQgqKzSFXQwNxfIlEVQ_ybvHD1T-D8mQSHZxwEE41ePrKl59Way6zN3e5AGxOrXY4Vdn7KhK7RWRqBYww==/latest?errorImage=false" alt="石">
+                        <p>石</p>
+                    </div>
+                    <div class="item">
+                        <img src="https://msp.c.yimg.jp/images/v2/FUTi93tXq405grZVGgDqGz5pkwNEhTPC-_QtQ8JlESAX85JzjL2RGX_HBqzR0WRm8Hdj74Ax1ms0vj9-GnpEyfZqvZSi-5-yrWn8hypEa8Cm-9RPcB7ZvKsr__OIjG-hl96Z0elzep-hPXzyAVNLrbjqWogVft4CjhkksMyf_luSCbSb5SE8WhqEHQx3odTp4r__0OZ_fGOFuis6xnqUGEzZjFJ27j4CJN3GZUimY5R7R2HOJPARj8GwsFrzay0rLsSw5OWD8oW1w-GgyrlnqHoqPkPoo35lyikkBt1hv7YZpQjcDmKmX9kUCp0Vvb3D0aobXmDtADn4VuhWiHTky0VQ_ybvHD1T-D8mQSHZxwEH_GZGKHSWa23q4caBxbU0f_bhg7oRZhzw4ifnyyjJlg==/latest?errorImage=false" alt="深層岩">
+                        <p>深層岩</p>
+                    </div>
+                    <div class="item">
+                        <img src="https://msp.c.yimg.jp/images/v2/FUTi93tXq405grZVGgDqGz5pkwNEhTPC-_QtQ8JlESAX85JzjL2RGX_HBqzR0WRm8Hdj74Ax1ms0vj9-GnpEyfZqvZSi-5-yrWn8hypEa8BVj6-n3SqvbBHAvgXaexmCdQazPg4ozQVjcuWk3s3vTaLzxOSFze-m5Ytbw5CRaFf2oGiQXSLNmg31pomgThmgppdfdHUUtG6c5ZqMEPlB6go0wDdxsU1v7XFdDA3-h7ESpTJXeGgjH1pYS_NkT8ZrrBreLrILy8BVFVwXQr7uf4NY_RJeyAPpRKf5KY2jpLFyf4ef-Er3XSAIoa0rHhmXXKGcYg2SDAQa4_9fBny3FHcd5M-D12HbUEEnRAX3B9qO9ja5IZrAoPp80Rf6aJbPcg2URK7l_xbtvrCvPnngd74m8tiZ8TFgKC286cD59Vo=/latest?errorImage=false" alt="丸石">
+                        <p>丸石</p>
+                    </div>
+                    <div class="item">
+                        <img src="https://msp.c.yimg.jp/images/v2/FUTi93tXq405grZVGgDqGz5pkwNEhTPC-_QtQ8JlESAX85JzjL2RGX_HBqzR0WRm8Hdj74Ax1ms0vj9-GnpEyfZqvZSi-5-yrWn8hypEa8CeJ1eHxbfLaJwqqIJPbTCQFwLsBoPSocEHDKe5-XWFyg8MY0l3rtk2F1EcFHMHUkgV0dhxgvKQ0i6G6ah5AjMosNyepIZM65qKYasm9ueTfdjOhIwv9_ca4nd7CfPTMWJ7C3A7Uubn4wOq6nYJ1q8M4UlYHxosV1iudZ4heLo308xZceb2D7n53BnTxhwynW5DAZ8OXitdWn9ThlPbGMs03oO2Yd7CqjsFTdg-Ap0VEe7HsXLPhZLe048hjPU_7-4NDHCmdLF8PLiuZVCyja1PwSadYXvHZZBX-ZjfoNZ8VYMakOJmS7NMsW6OOeSIxxKg_w-gz3AvUDRzhx3NKJUj/latest?errorImage=false" alt="深層岩の丸石">
+                        <p>深層岩の丸石</p>
+                    </div>
+                    <div class="item">
+                        <img src="https://msp.c.yimg.jp/images/v2/FUTi93tXq405grZVGgDqGz5pkwNEhTPC-_QtQ8JlESAX85JzjL2RGX_HBqzR0WRm8Hdj74Ax1ms0vj9-GnpEyfZqvZSi-5-yrWn8hypEa8Bja_R-aprKDDQ68IBnRtjYDQhkijgQCxFAZOYyMLXsu2g9ujFwWn0P2rajJvvMtrcbZ-fz05AOcumCCmDXa3fxiXQQa9B5ZngifrHYHvv7s2SyKDCSVNkd3EU8f-ovEeSPHCIbSDIZG2Tb1pNtne0nkB-C2WJlFS7RLib-zd9D-rkggu1G7quPQArDKfchW_HRdOefxyHW6VLRekG_j7wO2SvnjmRT98WsVHNf4kOz4QfYXRS-DvrtMl-2oQwzDNqaDlcGYuXe6d3Hgme5Zuv7p0I4lGna9krwNCo3hzCnPA==/latest?errorImage=false" alt="花崗岩">
+                        <p>花崗岩</p>
+                    </div>
+                    <div class="item">
+                        <img src="https://msp.c.yimg.jp/images/v2/FUTi93tXq405grZVGgDqGz5pkwNEhTPC-_QtQ8JlESAX85JzjL2RGX_HBqzR0WRm8Hdj74Ax1ms0vj9-GnpEyfZqvZSi-5-yrWn8hypEa8BZij6NtHnpG0zO0hHYXDKd9JBtKrV0ZkgCAzUdiQfepd2m7BLX5NXAspdRCLxoXuNr7ZvyIhEjKDzZJFsdZJO2JfQEj8OVWCeheljbUc56SWvgejC0Czt7dY7gL8cl27zXQjo78F5MXGlJmsiJHVCOP4VEHjlA__kb5o_DEUp6v1NkKMKa8LxZmRFTNaq8N-vHCT7ITnvDpJY5jwA7Coucqssv8eLlYWFqQLECchfmOVBX8AnfQNm1CAIJ2vREjIXH90m2cADG3-ZowcJ56Dh1YKSxar-7es7rFs4PLLyUpQ==/latest?errorImage=false" alt="安山岩">
+                        <p>安山岩</p>
+                    </div>
+                    <div class="item">
+                        <img src="https://msp.c.yimg.jp/images/v2/FUTi93tXq405grZVGgDqGz5pkwNEhTPC-_QtQ8JlESAX85JzjL2RGX_HBqzR0WRm8Hdj74Ax1ms0vj9-GnpEyfZqvZSi-5-yrWn8hypEa8AtuhoLbjrygvO0kJJgXqasSDh3P_9Moq8sOPW3LfFSXUhHagK3ECPQoBrU4gQFV39ahas-F86dAt6iFLHKTduPl36KVjAYpN1vgE2sYKZDS8CiaFnyLoVOiVWHfKLgh6K3ScdipCuusyvBkLOGSrl5L7UI8qt7GgePdmc7qn76rNXK-6zq2HvOBCo8xKUp7BFFVpkf8euHqaMoWEZI3ryH1z9IRT_Z-gykh9mUDnMtgI72NrkhmsCg-nzRF_pols8FK-4aW6BIL0K_oTQYqNr2Bj2f8bZ8R2EzfxaLL7thfQ==/latest?errorImage=false" alt="閃緑岩">
+                        <p>閃緑岩</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 草系ブロック -->
+            <div class="item-category">
+                <h3>砂系ブロック</h3>
+                <div class="item-list">
+                    <div class="item">
+                        <img src="https://msp.c.yimg.jp/images/v2/FUTi93tXq405grZVGgDqGz5pkwNEhTPC-_QtQ8JlESAX85JzjL2RGX_HBqzR0WRm8Hdj74Ax1ms0vj9-GnpEyfZqvZSi-5-yrWn8hypEa8CtSR20wbwLXuksCI4Fi56f-nDudUpuiQcHKo2qkAtKDsVKq91EH5Y3peGyUNhhsikT3FfFj5fs8X83nrG0rFJU8XpJFUiwn81vFiIu__54yT5pkwNEhTPC-_QtQ8JlESAX85JzjL2RGX_HBqzR0WRm8Hdj74Ax1ms0vj9-GnpEyfZqvZSi-5-yrWn8hypEa8CtSR20wbwLXuksCI4Fi56f-nDudUpuiQcHKo2qkAtKDsVKq91EH5Y3peGyUNhhsikT3FfFj5fs8X83nrG0rFJUg2TUWon14TQrPwboFlQOaA==/latest?errorImage=false" alt="砂">
+                        <p>砂</p>
+                    </div>
+                    <div class="item">
+                        <img src="https://msp.c.yimg.jp/images/v2/FUTi93tXq405grZVGgDqGz5pkwNEhTPC-_QtQ8JlESAX85JzjL2RGX_HBqzR0WRm8Hdj74Ax1ms0vj9-GnpEyfZqvZSi-5-yrWn8hypEa8DjBunpsx9fAqkhv619wTQsu8TjvPZANfIj7BsZUr6XqFBX8AnfQNm1CAIJ2vREjIWd3t5Da_WcdwKdr8peT-2rKgsvK6sybdiUDkG0pMqhAXMNloXkTTGU0rupfcPp3h4GQe2IPai2lDxN9Zam9ndrDXgnbFAQaXKZBzgi1No1pYbgwJHyb9mYMBkeCWOFPC-7_RCUf3g2HM230Z9_VWs-jzkAGdEDlIbcGLt9QYpaFHB7yReI4PKojh-11YuZ3njFSqvdRB-WN6XhslDYYbIpX7qPwPVANZzQh9LFY0f1P4Nk1FqJ9eE0Kz8G6BZUDmg=/latest?errorImage=false" alt="赤い砂">
+                        <p>赤い砂</p>
+                    </div>
+                    <div class="item">
+                        <img src="https://msp.c.yimg.jp/images/v2/FUTi93tXq405grZVGgDqGz5pkwNEhTPC-_QtQ8JlESAX85JzjL2RGX_HBqzR0WRm8Hdj74Ax1ms0vj9-GnpEyfZqvZSi-5-yrWn8hypEa8BULV7mum-SNtfGStf2F4vASTqZ8y4TJbdNplVBXwlKxrjqWogVft4CjhkksMyf_lvV9TsaOjL73crb1bvqDTjUT6i3n-BQKl-GbmfGYtMk_UzZjFJ27j4CJN3GZUimY5R7R2HOJPARj8GwsFrzay0rLsSw5OWD8oW1w-GgyrlnqHoqPkPoo35lyikkBt1hv7byvyx3FgC4jMeUnNqCfod27oKmwbiexoygHLWu3dAr1UVQ_ybvHD1T-D8mQSHZxwE0naMriSoNVKuBuaRAyF9yCv-4IFYw2SOHPkC-tG2C9Q==/latest?errorImage=false" alt="砂岩">
+                        <p>砂岩</p>
+                    </div>
+                    <div class="item">
+                        <img src="https://msp.c.yimg.jp/images/v2/FUTi93tXq405grZVGgDqGz5pkwNEhTPC-_QtQ8JlESAX85JzjL2RGX_HBqzR0WRm8Hdj74Ax1ms0vj9-GnpEyfZqvZSi-5-yrWn8hypEa8BoY3B2OC5uDnZu74DCKSjSK3IqfJk03IYjx6YZIztGAIJWyGrFMikOa98mQis8x0brrUW1od5ETF55Zln50p8kE7WVr0pNBMFZK-sqZOPFlWhOPlvbjxAe-g_GQ_t4p8zbZK-H1mTXj3xcCjucpA3sC74C2hN0RCHdjLNk6hP2RRNGm6MLIWONv205Dh-WKxIE1B2oKIOdkjzivQTRVlXHaoGCs1BXU1qEdnQy_GdZIophSa6ntJS8xys3oD8CtF9FUP8m7xw9U_g_JkEh2ccBdrZ3B3T9PBG4mkAfDmxWviPg4_1MPPQ4T-P5VBmDDNk=/latest?errorImage=false" alt="赤い砂岩">
+                        <p>赤い砂岩</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 草系ブロック -->
+            <div class="item-category">
+                <h3>氷系ブロック</h3>
+                <div class="item-list">
+                    <div class="item">
+                        <img src="https://msp.c.yimg.jp/images/v2/FUTi93tXq405grZVGgDqG2dwM1M04EuxuRUHp89E-TebrWprhEJAhKaAAPuzMw3CsQEw5uadfA5uyqnmcB0Q-zfPqg2APtB_gq3SGct3QXl5nvsr6yLfcWBb65UrlOUGs1UPB95ZlxnSudh9A1B4Gg-CqIGzwqo5JuEaLaYkZEJRIPeDj2wF14qXgCrPAADEKU_PbIrPjl3-uXIAta74kg==/Packed_Ice_JE2_BE3.png?errorImage=false" alt="氷塊">
+                        <p>氷塊</p>
+                    </div>
+                    <div class="item">
+                        <img src="https://msp.c.yimg.jp/images/v2/FUTi93tXq405grZVGgDqG2dwM1M04EuxuRUHp89E-TcxkjsgRY6qQZy22-KrCJS2pd6oPagNGD-Rk-20dT9V4Q872we5k8SO0jG7Ym6hOiCWTDhDb6xm2UugvQyjxIQMuOZBZ5FsvvlvQ6aMwneHsWQGpuwZ5O58eRLwP8QdxiCTk5bq4R9kxue3wts0lkbgJcVVYdh4oH5HAZ3d_KaYSQ==/Blue_Ice_JE3_BE2.png?errorImage=false" alt="青氷">
+                        <p>青氷</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="rank" class="page-content">
+            <div class="section-title">ランクについて</div>
+        
+            <!-- ランクの説明 -->
+            <div class="description">
+                <p>ランクとは<br>ブロックを掘った数に応じて上がっていくものです。</p>
+                <p>ランクは計 <strong>17階級</strong> あり<br>初期値は全員 <strong>Beginner / ビギナー</strong> となっています。</p>
+                <p>他の階級・他の階級へ上がれる条件は下記のとおりです。<br><br><strong>ランクは自動的に上がります。</strong></p>
+            </div>
+        
+            <!-- ランク一覧 -->
+            <div class="rank-list">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ランク名</th>
+                            <th>昇格条件</th>
+                            <th>昇格報酬</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Beginner / ビギナー</td>
+                            <td>初期状態</td>
+                            <td>なし</td>
+                        </tr>
+                        <tr>
+                            <td>Runner / ランナー</td>
+                            <td>1,000 Block</td>
+                            <td>1,000 ￥</td>
+                        </tr>
+                        <tr>
+                            <td>Runner+ / ランナープラス</td>
+                            <td>3,000 Block</td>
+                            <td>3,000 ￥</td>
+                        </tr>
+                        <tr>
+                            <td>Normal / ノーマル</td>
+                            <td>5,000 Block</td>
+                            <td>5,000 ￥</td>
+                        </tr>
+                        <tr>
+                            <td>Normal+ / ノーマルプラス</td>
+                            <td>7,000 Block</td>
+                            <td>7,500 ￥</td>
+                        </tr>
+                        <tr>
+                            <td>Miner / マイナー</td>
+                            <td>10,000 Block</td>
+                            <td>10,000 ￥</td>
+                        </tr>
+                        <tr>
+                            <td>Miner+ / マイナープラス</td>
+                            <td>15,000 Block</td>
+                            <td>20,000 ￥</td>
+                        </tr>
+                        <tr>
+                            <td>SMiner / スーパーマイナー</td>
+                            <td>20,000 Block</td>
+                            <td>20,000 ￥</td>
+                        </tr>
+                        <tr>
+                            <td>SMiner+ / スーパーマイナープラス</td>
+                            <td>25,000 Block</td>
+                            <td>20,000 ￥</td>
+                        </tr>
+                        <tr>
+                            <td>Breaker / ブレイカー</td>
+                            <td>30,000 Block</td>
+                            <td>50,000 ￥</td>
+                        </tr>
+                        <tr>
+                            <td>Breaker+ / ブレイカープラス</td>
+                            <td>40,000 Block</td>
+                            <td>30,000 ￥</td>
+                        </tr>
+                        <tr>
+                            <td>Hacker / ハッカー</td>
+                            <td>50,000 Block</td>
+                            <td>25,000 ￥</td>
+                        </tr>
+                        <tr>
+                            <td>Hacker+ / ハッカープラス</td>
+                            <td>100,000 Block</td>
+                            <td>80,000 ￥</td>
+                        </tr>
+                        <tr>
+                            <td>Destroyer / デストロイヤー</td>
+                            <td>500,000 Block</td>
+                            <td>100,000 ￥</td>
+                        </tr>
+                        <tr>
+                            <td>Destroyer+ / デストロイヤープラス</td>
+                            <td>1,000,000 Block</td>
+                            <td>100,000 ￥</td>
+                        </tr>
+                        <tr>
+                            <td>？？？？？ / ？？？？？</td>
+                            <td>2,000,000 Block</td>
+                            <td>500,000 ￥</td>
+                        </tr>
+                        <tr>
+                            <td>error / エラー</td>
+                            <td>5,000,000 Block</td>
+                            <td>1,000,000 ￥</td>
+                        </tr>
+                        <!-- 必要に応じて追加 -->
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section id="qa" class="page-content">
+            <div class="section-title">質問と答え</div>
+        
+            <!-- 質問と答え -->
+            <div class="faq-item">
+                <div class="faq-question">
+                    <p><strong>Q. 入ったら何すればいいの？</strong></p>
+                </div>
+                <div class="faq-answer">
+                    <p><strong>A.</strong> <br>入ったばかりの新規様には<br>1000円の支給がされています。<br>画面下に所持金と表示されていると思います。<br>そのお金で公式ショップへ行き<br>ツルハシなどのツールを買いましょう。</p>
+                </div>
+
+                <div class="faq-question">
+                    <p><strong>Q. どこへ行けばいい？</strong></p>
+                </div>
+                <div class="faq-answer">
+                    <p><strong>A.</strong> <br>世界へ入ると<strong>4方向</strong>に<br>ダイヤブロックのゲートがあります。<br><br>そのゲートへ入ると外へ出ることが出来ます。<br>赤枠内は掘ってはいけないで<br>ご注意ください。</p>
+                </div>
+
+                <div class="faq-question">
+                    <p><strong>Q. どんな感じに掘ればいいの？</strong></p>
+                </div>
+                <div class="faq-answer">
+                    <p><strong>A.</strong> <br>整地本を開き<strong>整地の仕方</strong>を押すと<br>どんな感じですればいいか書いてありますので<br>そちらを参考にしてください。</p>
+                </div>
+
+                <div class="faq-question">
+                    <p><strong>Q. ブロック掘ったけど、どうすればいいの？</strong></p>
+                </div>
+                <div class="faq-answer">
+                    <p><strong>A.</strong> <br>最初いた建物に戻ると<strong>ブロック換金所</strong>があります。<br>そこへ行き自分の堀田ブロックと<br>換金できるブロックを照らし合わせてください。<br><br>額縁に換金できるブロックが入っています。</q>
+                </div>
+
+                <div class="faq-question">
+                    <p><strong>Q. ランクはどうやったら上がるの？</strong></p>
+                </div>
+                <div class="faq-answer">
+                    <p><strong>A.</strong> <br>当サイトの<a href="#rank" onclick="showPage('rank')">ランクについて</a>を押すと<br>ランクと昇格条件や昇格報酬が載っています。<br>参考にしてください。</p>
+                </div>
+
+                <div class="faq-question">
+                    <p><strong>Q. ランクは何処で確認できる？</strong></p>
+                </div>
+                <div class="faq-answer">
+                    <p><strong>A.</strong> <br>ランクは画面下にある<br>所持金等々が載っている場所に<br><><strong>FlatRank</strong>の後に記述されています。</p>
+                </div>
+
+                <div class="faq-question">
+                    <p><strong>Q. エンチャント本とか防具は作っていいの？</strong></p>
+                </div>
+                <div class="faq-answer">
+                    <p><strong>A.</strong> <br>はい！<br>もちろん作る事はOKです！<br><br>さらに<strong>公式ショップ</strong>には<br><strong>拡張版ショップ</strong>があります！感圧版を踏むと入れます！<br><br><strong>Switchやスマホ版は重たいかもしれません。</strong></p>
+                </div>
+                <div class="faq-question">
+                    <p><strong>Q. ネザーやエンドは行っていいの？</strong></p>
+                </div>
+                <div class="faq-answer">
+                    <p><strong>A.</strong> <br>ネザーへ行くには<br>白い建物内の<strong>特殊ショップ</strong>の横に<br>ネザーゲートがあります！<br><br>エンドに関しては<br>現在行くことを禁じています。<br>エンドポータルを見つけたとしても<br>開通せず放置してください。</p>
+                </div>
+            </div>
+            
+            <!-- 他の質問と答え（必要に応じて追加） -->
+        </section>
+
+        <section id="terms" class="page-content" style="display: none;">
+            <div class="section-title">
+                利用規約
+            </div>
+            <!-- 内容 -->
+            <div class="terms-content">
+                <!-- 第1条 -->
+                <h3>第1条 (変更・中止)</h3>
+                <p>1. 当運営は事前の予告なく本規約の内容を変更する場合があります。<br></p>
+                <p>2. 当運営は事前の予告なく整地の範囲を変更する場合があります。<br>※変更する場合は'Discord'・通話等、当運営の選択する手段によって通知します。<br></p>
+                <p>3. 当運営は事前の予告なく整地ワールドを閉じる場合があります。<br></p>
+                <p>4. 当運営は事前の予告なく当運営の名前を変更する場合があります。<br>※変更する場合は第1条2項で記載した方法でお知らせします。<br></p>
+        
+                <!-- 第2条 -->
+<h3>第2条 (定義)</h3>
+<table class="terms-table">
+    <tr>
+        <th>本規約</th>
+        <td>本サービスの利用規約の事を示します。</td>
+    </tr>
+    <tr>
+        <th>当運営</th>
+        <td>Minecraft 整地運営の事を示します。</td>
+    </tr>
+    <tr>
+        <th>整地</th>
+        <td>当運営が主催のイベントの事を示します。</td>
+    </tr>
+    <tr>
+        <th>参加者</th>
+        <td>ワールドに参加し遊ぶ人を示します。</td>
+    </tr>
+    <tr>
+        <th>統合版</th>
+        <td>Minecraft Bedrock Editionを示します。</td>
+    </tr>
+    <tr>
+        <th>CS</th>
+        <td>・Nintendo Switch・PS4, PS5・Xbox などの家庭用ゲーム機を示します。</td>
+    </tr>
+    <tr>
+        <th>整地著作物</th>
+        <td>整地の写真、映像、その他整地に関連して発生したものを示します。</td>
+    </tr>
+    <tr>
+        <th>反社会勢力</th>
+        <td>荒らし団員やそれらに準する物の事を示します。</td>
+    </tr>
+    <tr>
+        <th>鯖</th>
+        <td>Discordのサービスであるサーバーシステムの事を示します。</td>
+    </tr>
+</table>
+        
+                <!-- 第3条 -->
+                <h3>第3条 (参加方法・資格)</h3>
+                <p>1. 次の場合がある場合、ワールドへの参加はお控えください。</p>
+                <ul>
+                    <li>整地報告に虚言発言があった場合</li>
+                    <li>本規約違反者</li>
+                    <li>本規約に違反したことある人</li>
+                    <li>運営責任者が参加が不適当と判断した場合</li>
+                </ul>
+                <p>2. HikinikuDESU103へのワールドの参加が必要です。<br>※ワールドへの参加は統合版でHikinikuDESU103へフレンド申請する必要があります。<br></p>
+                <p>3. 統合版の機種はPC, CS, スマホ, タブレットでの参加が可能です。<br></p>
+                <p>4. 参加者の利用する通信端末や通信事業者の提供するサービスの不具合により<br>整地・ワールドへの参加ができない場合、<br>当運営に帰責性がある場合を除き、当運営は何らの責任を負いません。<br></p>
+                <p>5. 整地への参加は任意であり<br>違反行為をしなければ誰でも参加が可能です。</p>
+        
+                <!-- 第4条 -->
+                <h3>第4条 (禁止行為)</h3>
+                <p>1. 参加者による、下記の行為を禁止します。</p>
+                <table class="terms-list-table">
+                    <tr>
+                        <th>禁止事項</th>
+                    </tr>
+                    <tr>
+                        <td>①外部ツール・外部アプリケーションを使用し不正行為をすること</td>
+                    </tr>
+                    <tr>
+                        <td>②整地範囲外のブロックの破壊</td>
+                    </tr>
+                    <tr>
+                        <td>③勝手に範囲を変更しないこと</td>
+                    </tr>
+                    <tr>
+                        <td>④指定高度より掘り下げる行為</td>
+                    </tr>
+                    <tr>
+                        <td>⑤人の所有物を奪わないこと</td>
+                    </tr>
+                    <tr>
+                        <td>⑥人のビーコン等を請わないこと</td>
+                    </tr>
+                    <tr>
+                        <td>⑦整地時破壊系アイテム (TNT等) を使用しないこと</td>
+                    </tr>
+                    <tr>
+                        <td>⑧水抜き時スポンジを使わないこと</td>
+                    </tr>
+                    <tr>
+                        <td>⑨当運営及び他の参加者への迷惑行為</td>
+                    </tr>
+                    <tr>
+                        <td>⑩参加者同士での団体の作成</td>
+                    </tr>
+                    <tr>
+                        <td>⑪参加者への誹謗中傷又はプライバシーを侵害する言動・行為</td>
+                    </tr>
+                    <tr>
+                        <td>⑫当運営及び他の参加者が不快に感じる言動・行動</td>
+                    </tr>
+                    <tr>
+                        <td>⑬当運営及び整地を妨害する行為</td>
+                    </tr>
+                    <tr>
+                        <td>⑭虚言・詐欺行為</td>
+                    </tr>
+                    <tr>
+                        <td>⑮その他、当運営が参加に不適切と判断する行為</td>
+                    </tr>
+                    <tr>
+                        <td>⑯ショップから購入したものを転売</td>
+                    </tr>
+                    <tr>
+                        <td>⑰Xray等を使用し不正をすること</td>
+                    </tr>
+                    <tr>
+                        <td>⑱互いの同意なく殴りあい倒す事</td>
+                    </tr>
+                    <tr>
+                        <td>⑲当鯖ないで完全な商売をしないこと</td>
+                    </tr>
+                    <tr>
+                        <td>⑳工事中に関してしつこく質問すること</td>
+                    </tr>
+                    <tr>
+                        <td>㉑アップデート等に対して文句を言わないこと</td>
+                    </tr>
+                    <tr>
+                        <td>㉒トラップタワーの制作</td>
+                    </tr>
+                    <tr>
+                        <td>㉓丸石製造機の制作</td>
+                    </tr>
+                    <tr>
+                        <td>㉔額縁からアイテムを奪う行為</td>
+                    </tr>
+                </table>
+                <p>2. 前項に基づく当運営の処置により参加者に損害が生じた場合でも、<br>当運営は何らの損害を賠償しません。</p>
+        
+                <!-- 第5条 -->
+                <h3>第5条 (処罰・処置)</h3>
+                <p>1. 本規約第4条で定められている禁止行為を行った場合<br>又は常識的に考え不適当と判断した場合に<br>処置として適用されるものである。</p>
+                <p>2. 本規約第3条で定められている禁止行為を行った場合、<br>下記の順で処罰をします。</p>
+                <ul>
+                    <li>1回目: その場で注意します。</li>
+                    <li>2回目: その場で厳重注意します。</li>
+                    <li>3回目: 10分間ワールドへの参加不可</li>
+                    <li>4回目: 30分間ワールドへの参加不可</li>
+                    <li>5回目: 永久的にワールドへの参加不可</li>
+                </ul>
+                <p>3. 前項に基づく当運営の処理により<br>参加者及び参加者同士で被害が生じた場合でも、<br>当運営は何らの責任を賠償しません。</p>
+        
+                <!-- 第6条 -->
+                <h3>第6条 (著作権等)</h3>
+                <p>1. 当運営が撮影・録画することがあります。</p>
+                <p>2. 整地著作物の著作権は当運営に帰属します。</p>
+                <p>3. 参加者は整地著作物をSNSへ公開することがあります。</p>
+                <p>4. 参加者は写真・映像及び音声が前項に定める通り<br>公開・利用されることを予め同意した上で本整地に参加するものとし、<br>当運営の自由な判断による記録・公開及び利用に関し<br>プライバシー権・パブリシティ権を行使せず<br>又一切の対価を請求しないものとします。</p>
+        
+                <!-- 第7条 -->
+                <h3>第7条 (免責)</h3>
+                <p>1. 整地参加における参加者のプライバシー侵害、盗難、<br>その他一切の問題について当運営に帰責性がある場合を除き、<br>当運営は何らの責任を負いません。</p>
+                <p>2. 参加者が本規約違反により<br>当運営又は他の参加者その他第三者に対して損害を与えた場合、<br>参加者はその損害を賠償するものとします。</p>
+                <p>3. 整地において参加者と他の参加者<br>その他の第三者との間で紛争が発生した場合、<br>参加者は自己の費用と責任において当該紛争を解決するものとし、<br>当運営に帰責性がある場合を除き<br>当運営は何らの責任を負いません。</p>
+
+        <!-- 第8条 -->
+        <h3>第8条 (反社会勢力の排除)</h3>
+        <p>1. 参加者は下記の各事項を確約するものとします。</p>
+        <ul>
+            <li>自らが '荒らし' '荒らし団員' 'ハッカー' でなくなってから<br>満3ヵ月が経過していない者荒らし者関連の者等<br>その他これらに準じるもの (移行総称し '反社会勢力')であること。</li>
+            <li>自ら若しくは第三者の不正の利用を図る目的<br>又は第三者に損害等を与える目的をもってするなど<br>反社会勢力を利用していると認められる関係を有すること。</li>
+        </ul>
+        <p>2. 参加者が前項の何れかに該当した場合、<br>当運営の主催する整地への参加をお断りさせて頂きます。</p>
+
+        <!-- 第9条 -->
+        <h3>第9条 (整地の停止等)</h3>
+        <p>1. 当運営は<br>下記の何れかに該当する場合は参加者に<br>事前の予告なく整地又は一部の提供を停止<br>または中断できるものとします。</p>
+        <ul>
+            <li>当運営に係るコンピューター、<br>ワールドの点検又は保持作業を緊急に行う場合</li>
+            <li>コンピューター又は<br>通信回線等が事故により停止した場合</li>
+            <li>地震・落雷・火災・風水害・停電等の<br>不可抗力により当運営が運営できなくなった場合</li>
+            <li>その他当運営が停止又は中断を必要とした場合</li>
+        </ul>
+        <p>2. 当運営に帰責性がある場合を除き、<br>当運営は何らの責任を負いません。</p>
+
+        <!-- 第10条 -->
+        <h3>第10条 (整地の定義)</h3>
+        <p>1. 整地とはMinecraftにおいて<br>ブロックを壊し、一定の高度にそろえるものとします。</p>
+        <p>2. 整地の方法は下記の方法とします。</p>
+        <ul>
+            <li>ツルハシ・斧・シャベル<br>その他の通常アイテムでの採掘</li>
+            <li>協力しての採掘</li>
+            <li>本規約で定められている違反行為を除いた効率のいい方法</li>
+            <li>ビーコンやポーション等の特殊効果の付いた状態</li>
+            <li>当運営が販売する特殊アイテムの使用</li>
+        </ul>
+        <h3>＊その他＊</h3>
+        <p>当運営が主催する整地は<br>ワールド運営主である「'あーくん'」のワールドを利用しています。<br>主が所属する連絡アプリケーション<br>「Discord」のサービスである鯖を用いて<br>SNSの他ユーザーと関わりコミュニケーションをしています。<br><br>規約に違反した場合、鯖からの永久追放又は一時的な追放の処置をします。<br><br>御理解御協力の程、心よりお願い申し上げます。</p>
+
+        <p>整地運営の責任者</p>
+        <p>「あーくん」<br>
+        Minecraft: 「HikinikuDESU103」<br>
+        Discord ID: 「akun_zzzzz」<br></p>
+
+        <p>質問は Discord にてお待ちしております。<br>
+        整地へのご参加お待ちしております。<br></p>
+
+        <h3>Minecraft 整地運営© - Akun’zzzzz</h3>
+    </div>
+</section>                
+
+<section id="donation" class="page-content" style="display: none;">
+    <div class="section-title">
+        募金をする上での注意点
+    </div>
+    <div class="terms-content">
+        <!-- 第1条 -->
+        <h3>第1条 (募金の使用用途)</h3>
+        <p>当運営へ支払われた募金は、<br>運営側が使用用途を決定できるものとします。<br></p>
+
+        <!-- 第2条 -->
+        <h3>第2条 (個人情報等)</h3>
+        <p>1. 当運営は<br>プレイヤー様のパーソナルデータを<br>「プライバシーポリシー」に定めるところにより<br>その目的の遂行に必要な範囲において<br>取り扱うこととします。<br></p>
+        <p>2. 当運営は、<br>以下の目的に必要な範囲で<br>パーソナルデータを取り扱うことがあります。<br></p>
+        <ul>
+            <li>(1) 募金に対する報告をする目的、<br>または運営する整地鯖への告知をする目的で<br>プレイヤー様へご連絡する場合があります。<br></li>
+            <li>(2) 当運営は、<br>本サービスを提供するにあたって、<br>整地鯖専用サイトのアクセス履歴などを収集し、<br>問題解決や利便性向上のために使用することがあります。<br></li>
+        </ul>
+
+        <h3>第3条 (免責)</h3>
+        <p>1. 当運営は、プレイヤー様の承諾を得ることなく、<br>本サービスの提供を変更、停止、または廃止することができます。<br>また、これにより生じた損害について一切責任を負いません。<br></p>
+
+        <!-- 中ぐらいのタイトル -->
+        <h3>上記の利用規約に同意してからご利用ください</h3>
+    </div>
+
+
+    <!-- 募金について -->
+    <div class="section-title">
+    <h2>募金について</h2>
+    </div>
+    <div class="donation-info">
+        <p>募金はPayPayを利用して行います。</p>
+        <p>送金方法は下記の通りです。</p>
+        <ul>
+            <li>QR読み込み</li>
+            <li>リンクから送金</li>
+        </ul>
+    </div>
+    <!-- 募金する！ボタン -->
+    <div class="donate-btn-container">
+        <button id="donateBtn" onclick="window.location.href='donation_form_page.html'">募金する！</button>
+    </div>
+</div>
+</section>
+
+
+        <!-- フッター -->
+        <footer class="footer">
+            Copyright © 整地鯖運営, Inc. ALL RIGHTS RESERVED.
+            </footer>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+    <script>
+        function showPage(pageId) {
+    // すべてのページを非表示にする
+    const pages = document.querySelectorAll('.page');
+    pages.forEach(page => {
+        page.classList.remove('show');
+    });
+    
+    // 現在選択されているメニュー項目を非アクティブにする
+    const links = document.querySelectorAll('.menu a');
+    links.forEach(link => {
+        link.classList.remove('active');
+    });
+
+    // 新しいページを表示
+    const newPage = document.getElementById(pageId);
+    newPage.classList.add('show');
+    
+    // メニュー項目をアクティブにする
+    const activeLink = document.querySelector(`.menu a[href="#${pageId}"]`);
+    activeLink.classList.add('active');
+}
+
+
+
+        // スクロールイベントの追加
+window.addEventListener('scroll', () => {
+    document.querySelectorAll('.title-with-underline').forEach((element) => {
+        // タイトルの位置とスクロール位置をチェック
+        const elementTop = element.offsetTop;
+        const elementBottom = elementTop + element.offsetHeight;
+        const windowTop = window.scrollY;
+        const windowBottom = window.scrollY + window.innerHeight;
+
+        // タイトルが表示範囲に入ったかどうかをチェック
+        if (windowBottom > elementTop && windowTop < elementBottom) {
+            element.classList.add('active');  // 照準が合ったとき
+            element.classList.remove('active-out'); // 戻るアニメーションを無効にする
+        } else {
+            element.classList.remove('active');  // 照準が外れたとき
+            element.classList.add('active-out'); // 戻るアニメーション
+        }
+    });
+});
+
+// 初期状態でもスクロール位置を考慮して、ページ読み込み時にタイトル位置の判定を実行
+window.dispatchEvent(new Event('scroll'));
+
+        // ハンバーガーメニューのトグル
+    function toggleMenu() {
+    const menu = document.getElementById('menu');
+    menu.classList.toggle('show');
+}
+
+        // ページの表示を切り替える
+        function showPage(page) {
+            // すべてのセクションを非表示に
+            const sections = document.querySelectorAll('.page-content');
+            sections.forEach(section => {
+                section.style.display = 'none';
+            });
+
+            // 指定したページだけ表示
+            const activeSection = document.getElementById(page);
+            if (activeSection) {
+                activeSection.style.display = 'block';
+            }
+        }
+
+            // メニューがクリックされた時の処理
+    document.querySelectorAll('.menu a').forEach(item => {
+        item.addEventListener('click', () => {
+            // すべてのメニュー項目からactiveクラスを削除
+            document.querySelectorAll('.menu a').forEach(link => link.classList.remove('active'));
+            // クリックされた項目にactiveクラスを追加
+            item.classList.add('active');
+        });
+    });
+
+    function showPage(pageId) {
+    // 他のページを非表示にする処理（例えば、すべてのページを非表示にする）
+    document.querySelectorAll('.page-content').forEach(function(page) {
+        page.style.display = 'none';
+    });
+
+    // 対象のページを表示する
+    var targetPage = document.getElementById(pageId);
+    if (targetPage) {
+        targetPage.style.display = 'block';
+    }
+}
+
+document.getElementById('donateBtn').addEventListener('click', function() {
+    // 募金フォームを表示
+    document.getElementById('donationForm').style.display = 'block';
+    document.getElementById('donateBtn').style.display = 'none';
+    updateProgressBar(1); // 進行度バーを1に更新
+});
+
+document.getElementById('donationFormContent').addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    const nickname = document.getElementById('nickname').value;
+    const amount = document.getElementById('amount').value;
+
+    // 入力内容をテキストファイルに記録
+    const donationDetails = `名前: ${nickname}, 金額: ${amount}, 日時: ${new Date().toLocaleString()}\n`;
+    const blob = new Blob([donationDetails], { type: 'text/plain' });
+    const a = document.createElement('a');
+    a.href = URL.createObjectURL(blob);
+    a.download = 'send_money.txt';
+    a.click();
+
+    // 送金方法選択を表示
+    document.getElementById('paymentOptions').style.display = 'block';
+    updateProgressBar(2); // 進行度バーを2に更新
+});
+
+document.getElementById('qrPayment').addEventListener('click', function() {
+    document.getElementById('qrPage').style.display = 'block';
+    document.getElementById('paymentOptions').style.display = 'none';
+    updateProgressBar(3); // 進行度バーを3に更新
+});
+
+document.getElementById('linkPayment').addEventListener('click', function() {
+    document.getElementById('linkPage').style.display = 'block';
+    document.getElementById('paymentOptions').style.display = 'none';
+    updateProgressBar(3); // 進行度バーを3に更新
+});
+
+document.getElementById('endDonation').addEventListener('click', function() {
+    // 終了後、ホームに戻る
+    window.location.href = 'home.html';
+});
+
+function updateProgressBar(step) {
+    document.getElementById('progressBar').value = step;
+}
+    </script>
+</body>
+</html>
